@@ -1,0 +1,14 @@
+a.out
+lauxlib.h
+lib.c
+lib.o
+liball.so
+lua.h
+lua.hpp
+luaconf.h
+luajit.h
+lualib.h
+main.c
+my_function
+test.lua
+test2.lua
