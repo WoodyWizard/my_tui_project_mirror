@@ -74,7 +74,7 @@ end
 
 function widget:create_menu(arrange, x, y)
     widget.counter = widget.counter + 1
-    local localMenu = menu
+    local localMenu = deepcopy(menu)
     localMenu.arrange = arrange
     localMenu.position.x = x
     localMenu.position.y = y

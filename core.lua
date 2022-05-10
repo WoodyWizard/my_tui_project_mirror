@@ -25,7 +25,7 @@ function core:key_events(key)
 		end
 	end
 	if key == 258 then -- DOWN ARROW
-		if widget.widgets[widget.focus_id].selected < #widget.widgets[widget.focus_id].sections then
+		if widget.widgets[widget.focus_id].selected < #widget.widgets[widget.focus_id].sections  then
 			widget.widgets[widget.focus_id].selected = widget.widgets[widget.focus_id].selected + 1
 		end
 	end

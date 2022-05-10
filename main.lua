@@ -14,6 +14,13 @@ newMenu:add_section("Fourth", curses.COLOR_BLACK, curses.COLOR_BLUE)
 libmenu:set_focus(1)
 
 
+local newMenu2 = libmenu:create_menu(true, 30, 10)
+newMenu2:add_section("First", curses.COLOR_BLACK, curses.COLOR_BLUE)
+newMenu2:add_section("Second", curses.COLOR_BLACK, curses.COLOR_BLUE)
+newMenu2:add_section("Third", curses.COLOR_BLACK, curses.COLOR_BLUE)
+newMenu2:add_section("Fourth", curses.COLOR_BLACK, curses.COLOR_BLUE)
+
+
 
 
 local function main ()
