@@ -34,14 +34,7 @@ local function main ()
 
 
 	while core.exit == false do
-		for i = 1, 4, 1 do
-			if newMenu.selected == newMenu.sections[i].id then
-				stdscr:attron(curses.color_pair(23))
-			else
-				stdscr:attron(curses.color_pair(22))
-			end
-			stdscr:mvaddstr ( newMenu.sections[i].position.y, newMenu.sections[i].position.x , newMenu.sections[i].name )
-		end
+		core:draw()
 
 
 		core:key_events(core:get_key())

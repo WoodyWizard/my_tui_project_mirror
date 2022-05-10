@@ -8,6 +8,7 @@ core.key = nil
 core.exit = false
 core.curs = nil
 core.scr = nil
+core.drawFactory = {}
 
 
 
@@ -39,6 +40,14 @@ function core:get_key()
     local c = self.scr:getch ()
     if c < 256 then c = string.char (c) end
     return c
+end
+
+function core:draw()
+    if widget.widgets ~= nil then
+        for i = 1, #widget.widgets, 1 do
+            widget.widgets[i]:draw(self.curs, self.scr)
+        end
+    end
 end
 
 

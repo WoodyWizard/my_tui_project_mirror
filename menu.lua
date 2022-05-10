@@ -2,6 +2,7 @@ require 'utils'
 local curses = require "curses"
 
 
+
 local widget = {focus_id = nil, counter = 0, widgets = {}}
 local menu = {amount = 0, arrange = true, sections = {}, selected = 1, position = {x = nil, y = nil}, focus = false, id = nil}
 local section = {name = "section", colorFont = {active = nil, passive = nil}, colorBackground = {active = nil, passive = nil}, position = {x = nil, y = nil}, id = nil}
@@ -33,16 +34,23 @@ end
 
 
 
-function section:change_name(name)
-    self.name = name
+function menu:draw(curs, scr)
+    if self.sections ~= nil then
+        for i = 1, #self.sections, 1 do
+            if self.selected == self.sections[i].id then
+                scr:attron(curs.color_pair(23))
+            else
+                scr:attron(curs.color_pair(22))
+            end
+            scr:mvaddstr ( self.sections[i].position.y, self.sections[i].position.x , self.sections[i].name )
+        end
+    end
 end
-
 
 
 function menu:select()
 
 end
-
 
 
 function section:activate()
@@ -54,6 +62,12 @@ function section:activate()
 
     self.colorFont.active = object
     self.colorBackground.active = object2
+end
+
+
+
+function section:change_name(name)
+    self.name = name
 end
 
 
