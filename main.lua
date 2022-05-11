@@ -5,7 +5,7 @@ local core = require 'core'
 local exit = false
 
 
-local newMenu = libmenu:create_menu(true, 10, 10)
+local newMenu = libmenu:create_menu(10, 10, true)
 newMenu:add_section("First", curses.COLOR_BLACK, curses.COLOR_BLUE)
 newMenu:add_section("Second", curses.COLOR_BLACK, curses.COLOR_BLUE)
 newMenu:add_section("Third", curses.COLOR_BLACK, curses.COLOR_BLUE)
@@ -14,9 +14,9 @@ newMenu:add_section("Fourth", curses.COLOR_BLACK, curses.COLOR_BLUE)
 libmenu:set_focus(1)
 
 
-local newMenu2 = libmenu:create_menu(true, 30, 10)
+local newMenu2 = libmenu:create_menu(30, 10, true, true)
 newMenu2:add_section("First", curses.COLOR_BLACK, curses.COLOR_BLUE)
-newMenu2:add_section("Second", curses.COLOR_BLACK, curses.COLOR_BLUE)
+newMenu2:add_section("Second big test", curses.COLOR_BLACK, curses.COLOR_BLUE)
 newMenu2:add_section("Third", curses.COLOR_BLACK, curses.COLOR_BLUE)
 newMenu2:add_section("Fourth", curses.COLOR_BLACK, curses.COLOR_BLUE)
 
