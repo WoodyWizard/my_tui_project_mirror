@@ -29,6 +29,19 @@ function core:key_events(key)
 			widget.widgets[widget.focus_id].selected = widget.widgets[widget.focus_id].selected + 1
 		end
 	end
+    if key == 260 then -- LEFT ARROW
+        if widget.focus_id > 1 then
+            widget.focus_id = widget.focus_id - 1
+        end
+
+    end
+    if key == 261 then -- RIGHT ARROW
+        if widget.focus_id < #widget.widgets then
+            widget.focus_id = widget.focus_id + 1
+        end
+
+    end
+
 end
 
 function core:init(a,b)
